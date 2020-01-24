@@ -14,11 +14,15 @@ class _HomePageState extends State<HomePage> {
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.limeAccent,
         title: Text(
           "Arrasta e Aprenda",
           style: TextStyle(
-              fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          textAlign: TextAlign.center,
         ),
         actions: <Widget>[
           IconButton(
@@ -30,38 +34,235 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Row(
+          child: Column(
             children: <Widget>[
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  CupertinoButton(
-                      child: Container(
-                        height: 200,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(""),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.lightGreenAccent,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
                           child: Text(
                             "Cores",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/palette.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.red,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
+                          child: Text(
+                            "Expressões",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600),
                           ),
                         ),
-                      ),
-                      onPressed: () {}),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/emoji.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-              Column(
-                children: <Widget>[],
-              )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.blueAccent,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
+                          child: Text(
+                            "Lugares",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/place.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.yellow,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
+                          child: Text(
+                            "Animais",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/owl.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.amberAccent,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
+                          child: Text(
+                            "Números",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/number-blocks.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.pinkAccent,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.fromLTRB(0, 6.0, 0, 0),
+                          child: Text(
+                            "Horas",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        CupertinoButton(
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/images/clock.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
