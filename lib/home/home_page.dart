@@ -1,5 +1,8 @@
+import 'package:cromo_fruit/game/animals.dart';
 import 'package:cromo_fruit/game/expressions.dart';
 import 'package:cromo_fruit/game/fruit_colors.dart';
+import 'package:cromo_fruit/game/hours.dart';
+import 'package:cromo_fruit/game/numbers.dart';
 import 'package:cromo_fruit/game/professions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -202,7 +205,13 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                               Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AnimalsGame()),
+                              );
+                            }),
                       ],
                     ),
                   ),
@@ -243,7 +252,13 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => NumbersGame()),
+                              );
+                            }),
                       ],
                     ),
                   ),
@@ -278,7 +293,13 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HoursGame()),
+                              );
+                            }),
                       ],
                     ),
                   ),

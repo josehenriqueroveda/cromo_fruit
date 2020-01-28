@@ -3,23 +3,23 @@ import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
-class Professions extends StatefulWidget {
+class NumbersGame extends StatefulWidget {
   @override
-  _ProfessionsState createState() => _ProfessionsState();
+  _NumbersGameState createState() => _NumbersGameState();
 }
 
-class _ProfessionsState extends State<Professions> {
+class _NumbersGameState extends State<NumbersGame> {
   // Track the score
   final Map<String, bool> score = {};
 
   // Choices
   final Map choices = {
-    '👩‍🏫': '📚',
-    '👨‍🌾': '🌽',
-    '👩‍🚀': '🚀',
-    '👨‍🍳': '🍳',
-    '👩‍🔧': '🔨',
-    '👮': '🚔',
+    '2+1': '3️⃣',
+    '5+2': '7️⃣',
+    '3-1': '2️⃣',
+    '9-4': '5️⃣',
+    '3x2': '6️⃣',
+    '8÷2': '4️⃣',
   };
 
   // Shuffle the order of items
@@ -29,10 +29,13 @@ class _ProfessionsState extends State<Professions> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Profissões e seus objetos'),
-          backgroundColor: Colors.red),
+          title: Text(
+            'Primeiras operações',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.deepOrange),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.deepOrange,
         child: Icon(Icons.refresh),
         onPressed: () {
           setState(() {
@@ -47,7 +50,10 @@ class _ProfessionsState extends State<Professions> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Text('Pontuação ${score.length} / 6', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),),
+                child: Text(
+                  'Pontuação ${score.length} / 6',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,14 +105,15 @@ class _ProfessionsState extends State<Professions> {
           return Padding(
             padding: const EdgeInsets.all(1.0),
             child: Container(
-                child: Center(
-                    child: Text(
-                  choices[emoji],
-                  textAlign: TextAlign.center, style: TextStyle(fontSize: 40.0),
-                )),
-                height: 80,
-                width: 200,
-                color: Colors.grey[200]),
+              child: Center(
+                  child: Text(choices[emoji],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 50.0))),
+              height: 80,
+              width: 200,
+              color: Colors.grey[200],
+            ),
           );
         }
       },
@@ -137,7 +144,7 @@ class Emoji extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Text(
           emoji,
-          style: TextStyle(color: Colors.black, fontSize: 50),
+          style: TextStyle(color: Colors.blue, fontSize: 50),
         ),
       ),
     );

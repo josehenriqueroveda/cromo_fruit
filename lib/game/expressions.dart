@@ -32,9 +32,10 @@ class _ExpressionsState extends State<Expressions> {
             'Expressões e significados',
             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
           ),
-          backgroundColor: Colors.pink),
+          backgroundColor: Colors.blue),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
+        backgroundColor: Colors.blue,
         onPressed: () {
           setState(() {
             score.clear();
@@ -65,7 +66,7 @@ class _ExpressionsState extends State<Expressions> {
                           child:
                               Emoji(emoji: score[emoji] == true ? '✔️' : emoji),
                           feedback: Emoji(emoji: emoji),
-                          childWhenDragging: Emoji(emoji: '🌱'),
+                          childWhenDragging: Emoji(emoji: '❓'),
                         );
                       }).toList()),
                   Column(
@@ -100,15 +101,18 @@ class _ExpressionsState extends State<Expressions> {
             ),
           );
         } else {
-          return Container(
-            child: Center(
-                child: Text(choices[emoji],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 18.0, fontWeight: FontWeight.bold))),
-            height: 80,
-            width: 200,
-            color: Colors.grey[200],
+          return Padding(
+            padding: const EdgeInsets.all(1.0),
+            child: Container(
+              child: Center(
+                  child: Text(choices[emoji],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold))),
+              height: 80,
+              width: 200,
+              color: Colors.grey[200],
+            ),
           );
         }
       },

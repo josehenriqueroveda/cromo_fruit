@@ -3,23 +3,23 @@ import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
-class Professions extends StatefulWidget {
+class HoursGame extends StatefulWidget {
   @override
-  _ProfessionsState createState() => _ProfessionsState();
+  _HoursGameState createState() => _HoursGameState();
 }
 
-class _ProfessionsState extends State<Professions> {
+class _HoursGameState extends State<HoursGame> {
   // Track the score
   final Map<String, bool> score = {};
 
   // Choices
   final Map choices = {
-    '👩‍🏫': '📚',
-    '👨‍🌾': '🌽',
-    '👩‍🚀': '🚀',
-    '👨‍🍳': '🍳',
-    '👩‍🔧': '🔨',
-    '👮': '🚔',
+    '🕘': '9:00h',
+    '🕖': '7:00h',
+    '🕞': '3:30h',
+    '🕛': '12:00h',
+    '🕑': '2:00h',
+    '🕥': '10:30h',
   };
 
   // Shuffle the order of items
@@ -29,10 +29,13 @@ class _ProfessionsState extends State<Professions> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Profissões e seus objetos'),
-          backgroundColor: Colors.red),
+          title: Text(
+            'Que horas são?',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.deepPurple),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.deepPurple,
         child: Icon(Icons.refresh),
         onPressed: () {
           setState(() {
@@ -47,7 +50,10 @@ class _ProfessionsState extends State<Professions> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Text('Pontuação ${score.length} / 6', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),),
+                child: Text(
+                  'Pontuação ${score.length} / 6',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -61,7 +67,7 @@ class _ProfessionsState extends State<Professions> {
                           child:
                               Emoji(emoji: score[emoji] == true ? '✔️' : emoji),
                           feedback: Emoji(emoji: emoji),
-                          childWhenDragging: Emoji(emoji: '❓'),
+                          childWhenDragging: Emoji(emoji: '⌛'),
                         );
                       }).toList()),
                   Column(
@@ -99,14 +105,16 @@ class _ProfessionsState extends State<Professions> {
           return Padding(
             padding: const EdgeInsets.all(1.0),
             child: Container(
-                child: Center(
-                    child: Text(
-                  choices[emoji],
-                  textAlign: TextAlign.center, style: TextStyle(fontSize: 40.0),
-                )),
-                height: 80,
-                width: 200,
-                color: Colors.grey[200]),
+              child: Center(
+                  child: Text(choices[emoji],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 40.0, fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple))),
+              height: 80,
+              width: 200,
+              color: Colors.grey[200],
+            ),
           );
         }
       },

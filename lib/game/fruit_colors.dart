@@ -28,8 +28,9 @@ class _FruitGameState extends State<FruitGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Frutas e suas cores'), backgroundColor: Colors.pink),
+          title: Text('Frutas e suas cores'), backgroundColor: Colors.green),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
         child: Icon(Icons.refresh),
         onPressed: () {
           setState(() {
