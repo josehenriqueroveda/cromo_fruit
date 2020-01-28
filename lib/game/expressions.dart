@@ -2,23 +2,23 @@ import 'dart:math';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
-class FruitGame extends StatefulWidget {
+class Expressions extends StatefulWidget {
   @override
-  _FruitGameState createState() => _FruitGameState();
+  _ExpressionsState createState() => _ExpressionsState();
 }
 
-class _FruitGameState extends State<FruitGame> {
+class _ExpressionsState extends State<Expressions> {
   // Track the score
   final Map<String, bool> score = {};
 
   // Choices
   final Map choices = {
-    '🍐': Colors.green,
-    '🍌': Colors.yellow,
-    '🍎': Colors.red,
-    '🍇': Colors.purple,
-    '🥥': Colors.brown,
-    '🍊': Colors.orange,
+    '😴': 'Sonolento',
+    '😱': 'Surpreso',
+    '🤔': 'Pensativo',
+    '🤣': 'Engraçado',
+    '😭': 'Chorando',
+    '😄': 'Feliz',
   };
 
   // Shuffle the order of items
@@ -28,7 +28,11 @@ class _FruitGameState extends State<FruitGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Frutas e suas cores'), backgroundColor: Colors.pink),
+          title: Text(
+            'Expressões e significados',
+            style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.pink),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
         onPressed: () {
@@ -44,7 +48,10 @@ class _FruitGameState extends State<FruitGame> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Text('Pontuação ${score.length} / 6', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),),
+                child: Text(
+                  'Pontuação ${score.length} / 6',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -93,9 +100,15 @@ class _FruitGameState extends State<FruitGame> {
             ),
           );
         } else {
-          return Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: Container(color: choices[emoji], height: 80, width: 200),
+          return Container(
+            child: Center(
+                child: Text(choices[emoji],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18.0, fontWeight: FontWeight.bold))),
+            height: 80,
+            width: 200,
+            color: Colors.grey[200],
           );
         }
       },

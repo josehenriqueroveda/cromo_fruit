@@ -1,24 +1,25 @@
 import 'dart:math';
+
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
-class FruitGame extends StatefulWidget {
+class Professions extends StatefulWidget {
   @override
-  _FruitGameState createState() => _FruitGameState();
+  _ProfessionsState createState() => _ProfessionsState();
 }
 
-class _FruitGameState extends State<FruitGame> {
+class _ProfessionsState extends State<Professions> {
   // Track the score
   final Map<String, bool> score = {};
 
   // Choices
   final Map choices = {
-    '🍐': Colors.green,
-    '🍌': Colors.yellow,
-    '🍎': Colors.red,
-    '🍇': Colors.purple,
-    '🥥': Colors.brown,
-    '🍊': Colors.orange,
+    '👩‍🏫': '📚',
+    '👨‍🌾': '🌽',
+    '👩‍🚀': '🚀',
+    '👨‍🍳': '🍳',
+    '👩‍🔧': '🔨',
+    '👮': '🚔',
   };
 
   // Shuffle the order of items
@@ -28,7 +29,8 @@ class _FruitGameState extends State<FruitGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Frutas e suas cores'), backgroundColor: Colors.pink),
+          title: Text('Profissões e seus objetos'),
+          backgroundColor: Colors.pink),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.refresh),
         onPressed: () {
@@ -95,7 +97,15 @@ class _FruitGameState extends State<FruitGame> {
         } else {
           return Padding(
             padding: const EdgeInsets.all(1.0),
-            child: Container(color: choices[emoji], height: 80, width: 200),
+            child: Container(
+                child: Center(
+                    child: Text(
+                  choices[emoji],
+                  textAlign: TextAlign.center, style: TextStyle(fontSize: 40.0),
+                )),
+                height: 80,
+                width: 200,
+                color: Colors.grey[200]),
           );
         }
       },

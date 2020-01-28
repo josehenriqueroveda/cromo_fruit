@@ -51,6 +51,7 @@ flutter:
     - 'assets/images/palette.png'
     - 'assets/images/place.png'
     - 'assets/images/toys.png'
+    - 'assets/images/work.png'
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
