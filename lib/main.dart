@@ -1,8 +1,9 @@
 import 'package:cromo_fruit/home/home_page.dart';
+import 'package:cromo_fruit/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 
-void main() => runApp(CromoFruit());
+void main() => runApp(SplashScreenPage());
 
 class CromoFruit extends StatelessWidget {
   @override

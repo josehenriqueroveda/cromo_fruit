@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        backgroundColor: Colors.limeAccent,
+        backgroundColor: Colors.yellow,
         title: Text(
           "Arraste e Aprenda",
           style: TextStyle(
