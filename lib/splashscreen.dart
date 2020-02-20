@@ -37,9 +37,18 @@ class SplashScreenWidget extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('ARRASTE E APRENDA',
-                style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold, fontFamily: 'Schoolbell'),
-                ),
+              child: Container(
+                              margin: EdgeInsets.fromLTRB(6.0, 0, 6.0, 0),
+                              height: 33,
+                              width: 215,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/escrito.png"),
+                                  fit: BoxFit.scaleDown,
+                                ),
+                              ),
+                            ),
             ),
             Center(
               child: Container(
@@ -49,12 +58,6 @@ class SplashScreenWidget extends StatelessWidget {
                   animation: "move",
                   fit: BoxFit.contain,),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('Carregando...',
-                style: TextStyle(fontSize: 14.0, fontFamily: 'Schoolbell'),
-                ),
             ),
           ],
         ),

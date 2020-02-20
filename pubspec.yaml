@@ -26,11 +26,16 @@ dependencies:
   audioplayers: ^0.14.0
   splashscreen: ^1.2.0
   flare_flutter: ^2.0.1
+  flutter_launcher_icons: ^0.7.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  android: "launcher_icon" 
+  ios: true
+  image_path: "assets/images/ic_launcher.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -55,6 +60,10 @@ flutter:
     - 'assets/images/toys.png'
     - 'assets/images/work.png'
     - 'assets/Tomato.flr'
+    - 'assets/images/escrito.png'
+    - 'assets/images/cute.png'
+    - 'assets/images/ic_launcher.png'
+    - 'assets/images/dev.png'
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

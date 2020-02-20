@@ -1,3 +1,4 @@
+import 'package:cromo_fruit/about.dart';
 import 'package:cromo_fruit/game/animals.dart';
 import 'package:cromo_fruit/game/expressions.dart';
 import 'package:cromo_fruit/game/fruit_colors.dart';
@@ -34,7 +35,13 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.info_outline),
             tooltip: 'Sobre',
-            onPressed: () {},
+            onPressed: () {
+               Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => About()),
+                              );
+            },
           ),
         ],
       ),

@@ -118,13 +118,93 @@ class _AnimalsGameState extends State<AnimalsGame> {
         }
       },
       onWillAccept: (data) => data == emoji,
-      onAccept: (data) {
+      onAccept: (data) async {
         setState(() {
           score[emoji] = true;
           plyr.play('success.mp3');
+          if(score.length == 6) {
+            _complete();
+          }
         });
       },
       onLeave: (data) {},
+    );
+  }
+
+  Future<void> _complete() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Parabéns!',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple,
+            ),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    'Você acertou todos!',
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 150,
+                  decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/cute.png"),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 60),
+              child: FlatButton(
+                child: Text(
+                  'Fechar',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: FlatButton(
+                child: Text(
+                  'Jogar novamente',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {
+                  setState(() {
+                    score.clear();
+                    seed++;
+                  });
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
